@@ -6,29 +6,45 @@ import io.restassured.response.Response;
 
 
 public class OtherUtils {
-    public static Response responseGet(String baseUrl, String token) {
+    public static Response responseGet(String baseUrl, String token, Integer statusCode) {
         Response response = RestAssured.given()
                 .baseUri(Config.get("baseUrl"))
                 .header("Authorization", "Bearer " + token)
                 .when()
                 .get(baseUrl)
                 .then()
-                .statusCode(200)
+                .statusCode(statusCode)
                 .extract()
                 .response();
 
         return response;
     }
 
-    public static Response responsePost(String baseUrl, String token, String requestBody) {
+    public static Response responsePost(String baseUrl, String token, String requestBody, Integer statusCode) {
         Response response = RestAssured.given()
+                .contentType("application/json")
                 .baseUri(Config.get("baseUrl"))
                 .header("Authorization", "Bearer " + token)
                 .when()
                 .body(requestBody)
                 .post(baseUrl)
                 .then()
-                .statusCode(200)
+                .statusCode(statusCode)
+                .extract()
+                .response();
+
+        return response;
+    }
+
+    public static Response responseDelete(String baseUrl, String token, Integer statusCode) {
+        Response response = RestAssured.given()
+                .contentType("application/json")
+                .baseUri(Config.get("baseUrl"))
+                .header("Authorization", "Bearer " + token)
+                .when()
+                .delete(baseUrl)
+                .then()
+                .statusCode(statusCode)
                 .extract()
                 .response();
 
