@@ -1,0 +1,66 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Generated schema for Root",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "status_user": {
+          "type": "boolean"
+        },
+        "remember_token": {},
+        "created_by": {},
+        "updated_by": {},
+        "created_at": {
+          "type": "string"
+        },
+        "updated_at": {
+          "type": "string"
+        },
+        "user_type": {
+          "type": "string"
+        },
+        "achievement": {
+          "type": "number"
+        },
+        "first_name": {
+          "type": "string"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "full_name": {
+          "type": "string"
+        },
+        "status_user_label": {
+          "type": "string"
+        },
+        "test_run_details": {
+          "type": "array",
+          "items": {}
+        },
+        "project_assignees": {
+          "type": "array",
+          "items": {}
+        },
+        "medias": {
+          "type": "array",
+          "items": {}
+        }
+      }
+    },
+    "status": {
+      "type": "number"
+    },
+    "message": {
+      "type": "string"
+    }
+  }
+}
