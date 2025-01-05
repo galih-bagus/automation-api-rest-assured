@@ -4,24 +4,13 @@ import Data.projectData;
 import io.restassured.response.Response;
 import org.json.JSONObject;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import utils.AuthUtils;
 import utils.OtherUtils;
 
-import java.util.Properties;
-
 public class ProjectTest {
-    private static final Properties properties = new Properties();
-    private String baseUri;
     private String createdProjectTitle;
     private String createdProjectId;
-
-    @BeforeClass
-    public void setup() {
-//        baseUri = ConfigTest.get("baseUrl");
-//        RestAssured.baseURI = baseUri;
-    }
 
     @Test(priority = 1)
     public void getListProject() {
@@ -101,16 +90,4 @@ public class ProjectTest {
         Assert.assertEquals(dataMessage, "Object was deleted", "Pesan data tidak sesuai!");
         Assert.assertNotNull("Data tidak ditemukan!", data);
     }
-
-//    @Test(priority = 7, dependsOnMethods = "deleteProject")
-//    public void getDetailProjectInvalidId() {
-//        String token = AuthUtils.login();
-//        Response response = OtherUtils.responseGet("project/" + this.createdProjectId, token, 404);
-//        String data = response.asString();
-//        String message = response.jsonPath().getString("message");
-//        String id = response.jsonPath().getString("data.id");
-//        Assert.assertEquals(message, "The route api/crud/project/null could not be found.", "Pesan tidak sesuai!");
-//        Assert.assertEquals(id, this.createdProjectId, "Id tidak sesuai!");
-//        Assert.assertNotNull("Data tidak ditemukan!", data);
-//    }
 }

@@ -1,0 +1,36 @@
+// ENGFTTH
+// https://www.sit.leasemgt.xl.co.id/homepass/detail-create-new-funnel-cluster
+// https://api.sit.leasemgt.xl.co.id/lms-homepass/rest/v1/crud/cluster/submit
+{
+  "clusterName": "Retest UAT",
+  "region": "E",
+  "province": "35",
+  "city": "3511",
+  "hpPlan": 10000,
+  "oldClusterId": "",
+  "clusterCategory": "Close Cluster",
+  "clusterPriority": "P1",
+  "latitude": "-10.1922902",
+  "longitude": "100.124912"
+}
+
+// ENGFTTH
+// https://www.sit.leasemgt.xl.co.id/homepass/create-spk-design
+// https://api.sit.leasemgt.xl.co.id/lms-homepass/rest/v1/bpmn/HomeSPKDesign/createSPK?withVariable=false
+{
+  "region": "E",
+  "city": "3511",
+  "partner": "111451",
+  "initialHpPlan": 10000,
+  "targetHpActualPersen": null,
+  "targetHpActual": 233,
+  "hpTolerance": 233,
+  "maximumFunnels": 466,
+  "maximumFunnelsPercentage": 100,
+  "maxHpActual": 466,
+  "clusters": [
+    {
+      "cluster": "461439c4-7e3b-438b-bd94-1977a76f2758"
+    }
+  ]
+}

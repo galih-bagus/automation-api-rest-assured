@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Generated schema for Root",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "module_name": {
+        "type": "string"
+      },
+      "total_test_case": {
+        "type": "number"
+      },
+      "total_test_run_detail": {
+        "type": "number"
+      },
+      "total_module": {
+        "type": "number"
+      },
+      "id": {
+        "type": "string"
+      },
+      "created_by": {
+        "type": "string"
+      },
+      "updated_by": {
+        "type": "string"
+      },
+      "created_at": {
+        "type": "string"
+      },
+      "updated_at": {
+        "type": "string"
+      },
+      "project_id": {
+        "type": "string"
+      },
+      "deleted_by": {},
+      "deleted_at": {},
+      "order": {
+        "type": "number"
+      },
+      "parent_id": {},
+      "is_archive": {
+        "type": "boolean"
+      },
+      "submodule": {
+        "type": "array",
+        "items": {}
+      },
+      "total_submodule": {
+        "type": "number"
+      }
+    }
+  }
+}
