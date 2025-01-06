@@ -1,0 +1,74 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Generated schema for Root",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "object",
+      "properties": {
+        "content": {
+          "type": "array",
+          "items": {}
+        },
+        "pageable": {
+          "type": "object",
+          "properties": {
+            "offset": {
+              "type": "number"
+            },
+            "paged": {
+              "type": "boolean"
+            },
+            "unpaged": {
+              "type": "boolean"
+            }
+          }
+        },
+        "total_page": {
+          "type": "number"
+        },
+        "total_elements": {
+          "type": "number"
+        },
+        "number_of_element": {
+          "type": "number"
+        },
+        "first": {
+          "type": "boolean"
+        },
+        "last": {
+          "type": "boolean"
+        },
+        "size": {
+          "type": "number"
+        },
+        "number": {
+          "type": "number"
+        },
+        "empty": {
+          "type": "boolean"
+        },
+        "sort": {
+          "type": "object",
+          "properties": {
+            "sorted": {
+              "type": "boolean"
+            },
+            "unsorted": {
+              "type": "boolean"
+            },
+            "empty": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    },
+    "status": {
+      "type": "number"
+    },
+    "message": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,239 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Generated schema for Root",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "start_date": {
+          "type": "string"
+        },
+        "end_date": {
+          "type": "string"
+        },
+        "created_by": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "status_user": {
+              "type": "boolean"
+            },
+            "remember_token": {},
+            "created_by": {},
+            "updated_by": {},
+            "created_at": {
+              "type": "string"
+            },
+            "updated_at": {
+              "type": "string"
+            },
+            "user_type": {
+              "type": "string"
+            },
+            "achievement": {
+              "type": "number"
+            },
+            "first_name": {
+              "type": "string"
+            },
+            "last_name": {
+              "type": "string"
+            },
+            "full_name": {
+              "type": "string"
+            },
+            "status_user_label": {
+              "type": "string"
+            }
+          }
+        },
+        "updated_by": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "status_user": {
+              "type": "boolean"
+            },
+            "remember_token": {},
+            "created_by": {},
+            "updated_by": {},
+            "created_at": {
+              "type": "string"
+            },
+            "updated_at": {
+              "type": "string"
+            },
+            "user_type": {
+              "type": "string"
+            },
+            "achievement": {
+              "type": "number"
+            },
+            "first_name": {
+              "type": "string"
+            },
+            "last_name": {
+              "type": "string"
+            },
+            "full_name": {
+              "type": "string"
+            },
+            "status_user_label": {
+              "type": "string"
+            }
+          }
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "updated_at": {
+          "type": "string"
+        },
+        "deleted_at": {},
+        "project_id": {
+          "type": "string"
+        },
+        "is_archive": {
+          "type": "boolean"
+        },
+        "report": {
+          "type": "object",
+          "properties": {
+            "total_test_case": {
+              "type": "number"
+            },
+            "passed_percentage": {
+              "type": "number"
+            },
+            "status": {
+              "type": "object",
+              "properties": {
+                "passed": {
+                  "type": "object",
+                  "properties": {
+                    "total": {
+                      "type": "number"
+                    },
+                    "percentage": {
+                      "type": "number"
+                    }
+                  }
+                },
+                "untested": {
+                  "type": "object",
+                  "properties": {
+                    "total": {
+                      "type": "number"
+                    },
+                    "percentage": {
+                      "type": "number"
+                    }
+                  }
+                },
+                "blocked": {
+                  "type": "object",
+                  "properties": {
+                    "total": {
+                      "type": "number"
+                    },
+                    "percentage": {
+                      "type": "number"
+                    }
+                  }
+                },
+                "retest": {
+                  "type": "object",
+                  "properties": {
+                    "total": {
+                      "type": "number"
+                    },
+                    "percentage": {
+                      "type": "number"
+                    }
+                  }
+                },
+                "failed": {
+                  "type": "object",
+                  "properties": {
+                    "total": {
+                      "type": "number"
+                    },
+                    "percentage": {
+                      "type": "number"
+                    }
+                  }
+                },
+                "not_applicable": {
+                  "type": "object",
+                  "properties": {
+                    "total": {
+                      "type": "number"
+                    },
+                    "percentage": {
+                      "type": "number"
+                    }
+                  }
+                },
+                "in_progress": {
+                  "type": "object",
+                  "properties": {
+                    "total": {
+                      "type": "number"
+                    },
+                    "percentage": {
+                      "type": "number"
+                    }
+                  }
+                },
+                "hold": {
+                  "type": "object",
+                  "properties": {
+                    "total": {
+                      "type": "number"
+                    },
+                    "percentage": {
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "test_run": {},
+        "test_issue": {
+          "type": "array",
+          "items": {}
+        },
+        "medias": {
+          "type": "array",
+          "items": {}
+        },
+        "deleted_by": {}
+      }
+    },
+    "status": {
+      "type": "number"
+    },
+    "message": {
+      "type": "string"
+    }
+  }
+}
