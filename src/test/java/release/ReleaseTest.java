@@ -10,7 +10,9 @@ import utils.OtherUtils;
 
 public class ReleaseTest {
     private final String createdProjectId = "9dd32c57-a44e-4ccf-b55a-b727480aea72";
-    private String createdProjectTitle;
+    private String createdReleasedTitle;
+    private String startDate;
+    private String endDate;
 
     @Test(priority = 1)
     public void getListRelease() {
@@ -28,9 +30,12 @@ public class ReleaseTest {
         String token = AuthUtils.login();
         JSONObject requestBody = releaseData.create(this.createdProjectId);
         String body = requestBody.toString();
-        Response response = OtherUtils.responsePost("/crud/release", token, body, 201, "project-schema/create-project-schema.json", true);
+        Response response = OtherUtils.responsePost("/crud/release", token, body, 201, "releaseSchema/create.json", true);
         String data = response.asString();
         String message = response.jsonPath().getString("message");
+        this.createdReleasedTitle = response.jsonPath().getString("data.name");
+        this.startDate = response.jsonPath().getString("data.start_date");
+        this.endDate = response.jsonPath().getString("data.end_date");
         Assert.assertEquals(message, "success", "Pesan tidak sesuai!");
         Assert.assertNotNull("Data tidak ditemukan!", data);
     }
