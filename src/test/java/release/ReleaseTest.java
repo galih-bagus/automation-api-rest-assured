@@ -82,4 +82,16 @@ public class ReleaseTest {
         Assert.assertEquals(message, "success", "Pesan tidak sesuai!");
         Assert.assertEquals(id, this.releaseCreatedId, "Id tidak sesuai!");
     }
+
+    @Test(priority = 6, dependsOnMethods = "updateRelease")
+    public void deleteRelease() {
+        String token = AuthUtils.login();
+        Response response = OtherUtils.responseDelete("/crud/release/" + this.releaseCreatedId, token, 200, "releaseSchema/delete.json");
+        String data = response.asString();
+        String message = response.jsonPath().getString("message");
+        String dataMessage = response.jsonPath().getString("data");
+        Assert.assertEquals(message, "success", "Pesan tidak sesuai!");
+        Assert.assertEquals(dataMessage, "Object was deleted", "Pesan data tidak sesuai!");
+        Assert.assertNotNull("Data tidak ditemukan!", data);
+    }
 }
