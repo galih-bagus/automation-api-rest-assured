@@ -15,7 +15,7 @@ public class ProjectTest {
     @Test(priority = 1)
     public void getListProject() {
         String token = AuthUtils.login();
-        Response response = OtherUtils.responseGet("/crud/project", token, 200, "project-schema/project-schema.json");
+        Response response = OtherUtils.responseGet("/crud/project", token, 200, "project-schema/project-schema.json", true);
         String data = response.asString();
         String message = response.jsonPath().getString("message");
         Assert.assertEquals(message, "success", "Pesan tidak sesuai!");
@@ -28,7 +28,7 @@ public class ProjectTest {
         String token = AuthUtils.login();
         JSONObject requestBody = projectData.create();
         String body = requestBody.toString();
-        Response response = OtherUtils.responsePost("/crud/project", token, body, 201, "project-schema/create-project-schema.json");
+        Response response = OtherUtils.responsePost("/crud/project", token, body, 201, "project-schema/create-project-schema.json", true);
         String data = response.asString();
         String message = response.jsonPath().getString("message");
         String createdProjectTitleData = response.jsonPath().getString("data.title");
@@ -42,7 +42,7 @@ public class ProjectTest {
     @Test(priority = 3, dependsOnMethods = "createProject")
     public void searchProject() {
         String token = AuthUtils.login();
-        Response response = OtherUtils.responseGet("/crud/project?filter[title]=" + this.createdProjectTitle, token, 200, "project-schema/project-schema.json");
+        Response response = OtherUtils.responseGet("/crud/project?filter[title]=" + this.createdProjectTitle, token, 200, "project-schema/project-schema.json", true);
         String data = response.asString();
         String message = response.jsonPath().getString("message");
         String title = response.jsonPath().getString("data.content[0].title");
@@ -54,7 +54,7 @@ public class ProjectTest {
     @Test(priority = 4, dependsOnMethods = "searchProject")
     public void getDetailProject() {
         String token = AuthUtils.login();
-        Response response = OtherUtils.responseGet("/crud/project/" + this.createdProjectId, token, 200, "project-schema/detail-project-schema.json");
+        Response response = OtherUtils.responseGet("/crud/project/" + this.createdProjectId, token, 200, "project-schema/detail-project-schema.json", true);
         String data = response.asString();
         String message = response.jsonPath().getString("message");
         String id = response.jsonPath().getString("data.id");
@@ -68,7 +68,7 @@ public class ProjectTest {
         String token = AuthUtils.login();
         JSONObject requestBody = projectData.update();
         String body = requestBody.toString();
-        Response response = OtherUtils.responsePost("/crud/project/" + this.createdProjectId, token, body, 200, "project-schema/create-project-schema.json");
+        Response response = OtherUtils.responsePost("/crud/project/" + this.createdProjectId, token, body, 200, "project-schema/create-project-schema.json", true);
         String id = response.jsonPath().getString("data.id");
         String message = response.jsonPath().getString("message");
         String createdProjectTitleData = response.jsonPath().getString("data.title");
