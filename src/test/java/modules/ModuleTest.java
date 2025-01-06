@@ -17,12 +17,10 @@ public class ModuleTest {
 
     @Test(priority = 1)
     public void getListModules() {
-        String text = "Dengan ini cluster idnya : DSG0001057";
-
-        // Gunakan split untuk memisahkan berdasarkan tanda ":"
-        String[] parts = text.split(":");
-        String clusterId = parts[1].trim();
-        System.out.println("Cluster ID: sadds" + clusterId + "asd");
+        String token = AuthUtils.login();
+        Response response = OtherUtils.responseGet("/crud/module", token, 200, "moduleSchema/list.json", false);
+        String data = response.asString();
+        Assert.assertNotNull("Data tidak ditemukan!", data);
     }
 
     @Test(priority = 2)
@@ -30,7 +28,7 @@ public class ModuleTest {
         JSONObject requestBody = moduleData.create(this.createdProjectId);
         String body = requestBody.toString();
         String token = AuthUtils.login();
-        Response response = OtherUtils.responsePost("module", token, body, 201, "moduleSchema/create.json");
+        Response response = OtherUtils.responsePost("/crud/module", token, body, 201, "moduleSchema/create.json", true);
         String data = response.asString();
         this.createdModuleId = response.jsonPath().getString("data.id");
         Assert.assertNotNull("Data tidak ditemukan!", data);
@@ -39,7 +37,7 @@ public class ModuleTest {
     @Test(priority = 3)
     public void detailModules() {
         String token = AuthUtils.login();
-        Response response = OtherUtils.responseGet("module/" + this.createdModuleId, token, 200, "moduleSchema/detail.json");
+        Response response = OtherUtils.responseGet("/crud/module/" + this.createdModuleId, token, 200, "moduleSchema/detail.json", true);
         String data = response.asString();
         Assert.assertNotNull("Data tidak ditemukan!", data);
     }
@@ -49,7 +47,7 @@ public class ModuleTest {
         JSONObject requestBody = moduleData.update();
         String body = requestBody.toString();
         String token = AuthUtils.login();
-        Response response = OtherUtils.responsePost("module/" + this.createdModuleId, token, body, 200, "moduleSchema/create.json");
+        Response response = OtherUtils.responsePost("/crud/module/" + this.createdModuleId, token, body, 200, "moduleSchema/create.json", true);
         String data = response.asString();
         Assert.assertNotNull("Data tidak ditemukan!", data);
     }
@@ -57,7 +55,7 @@ public class ModuleTest {
     @Test(priority = 5)
     public void deleteModules() {
         String token = AuthUtils.login();
-        Response response = OtherUtils.responseDelete("module/" + this.createdModuleId, token, 200, "moduleSchema/delete.json");
+        Response response = OtherUtils.responseDelete("/crud/module/" + this.createdModuleId, token, 200, "moduleSchema/delete.json");
         String data = response.asString();
         Assert.assertNotNull("Data tidak ditemukan!", data);
     }
@@ -65,7 +63,7 @@ public class ModuleTest {
     @Test(priority = 6)
     public void detailModulesInvalid() {
         String token = AuthUtils.login();
-        Response response = OtherUtils.responseGet("module/" + this.createdModuleId, token, 404, "moduleSchema/invalidDetail.json");
+        Response response = OtherUtils.responseGet("/crud/module/" + this.createdModuleId, token, 404, "moduleSchema/invalidDetail.json", true);
         String errroMessage = response.jsonPath().getString("message");
         Assert.assertEquals("No query results for model [App\\Models\\Module] " + this.createdModuleId, errroMessage, "Data ditemukan!");
     }
