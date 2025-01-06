@@ -10,6 +10,7 @@ import utils.OtherUtils;
 
 public class ReleaseTest {
     private final String createdProjectId = "9dd32c57-a44e-4ccf-b55a-b727480aea72";
+    private String releaseCreatedId;
     private String createdReleasedTitle;
     private String startDate;
     private String endDate;
@@ -33,6 +34,7 @@ public class ReleaseTest {
         Response response = OtherUtils.responsePost("/crud/release", token, body, 201, "releaseSchema/create.json", true);
         String data = response.asString();
         String message = response.jsonPath().getString("message");
+        this.releaseCreatedId = response.jsonPath().getString("data.id");
         this.createdReleasedTitle = response.jsonPath().getString("data.name");
         this.startDate = response.jsonPath().getString("data.start_date");
         this.endDate = response.jsonPath().getString("data.end_date");
@@ -50,6 +52,18 @@ public class ReleaseTest {
         String title = response.jsonPath().getString("data.content[0].name");
         Assert.assertEquals(message, "success", "Pesan tidak sesuai!");
         Assert.assertEquals(title, this.createdReleasedTitle, "Judul tidak sesuai!");
+        Assert.assertNotNull("Data tidak ditemukan!", data);
+    }
+
+    @Test(priority = 4, dependsOnMethods = "searchRelease")
+    public void getDetailRelease() {
+        String token = AuthUtils.login();
+        Response response = OtherUtils.responseGet("/crud/release/" + this.releaseCreatedId, token, 200, "releaseSchema/detail.json", true);
+        String data = response.asString();
+        String message = response.jsonPath().getString("message");
+        String id = response.jsonPath().getString("data.id");
+        Assert.assertEquals(message, "success", "Pesan tidak sesuai!");
+        Assert.assertEquals(id, this.releaseCreatedId, "Id tidak sesuai!");
         Assert.assertNotNull("Data tidak ditemukan!", data);
     }
 }
