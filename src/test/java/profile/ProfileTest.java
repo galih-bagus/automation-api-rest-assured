@@ -24,7 +24,7 @@ public class ProfileTest {
     @Test
     public void getMyProfile() {
         String token = AuthUtils.login();
-        Response response = OtherUtils.responseGet("user/my", token, 200, "profileSchema/profileSchema.json");
+        Response response = OtherUtils.responseGet("user/my", token, 200, "profileSchema/profileSchema.json", true);
         String email = response.jsonPath().getString("data.email");
         Assert.assertEquals(email, "galih.bagus@javan.co.id", "Email tidak sesuai!");
     }
