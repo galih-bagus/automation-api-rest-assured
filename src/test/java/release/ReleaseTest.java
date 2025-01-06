@@ -66,4 +66,20 @@ public class ReleaseTest {
         Assert.assertEquals(id, this.releaseCreatedId, "Id tidak sesuai!");
         Assert.assertNotNull("Data tidak ditemukan!", data);
     }
+
+    @Test(priority = 5, dependsOnMethods = "getDetailRelease")
+    public void updateRelease() {
+        String token = AuthUtils.login();
+        JSONObject requestBody = releaseData.update(this.createdProjectId);
+        String body = requestBody.toString();
+        Response response = OtherUtils.responsePost("/crud/release/" + this.releaseCreatedId, token, body, 200, "releaseSchema/create.json", true);
+        String id = response.jsonPath().getString("data.id");
+        String message = response.jsonPath().getString("message");
+        String createdReleaseTitleData = response.jsonPath().getString("data.title");
+        String createdReleaseIdData = response.jsonPath().getString("data.id");
+        this.createdReleasedTitle = createdReleaseTitleData;
+        this.releaseCreatedId = createdReleaseIdData;
+        Assert.assertEquals(message, "success", "Pesan tidak sesuai!");
+        Assert.assertEquals(id, this.releaseCreatedId, "Id tidak sesuai!");
+    }
 }
