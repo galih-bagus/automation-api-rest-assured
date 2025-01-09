@@ -1,0 +1,87 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Generated schema for Root",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "case_code": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "precondition": {
+          "type": "string"
+        },
+        "project_id": {
+          "type": "string"
+        },
+        "created_by": {
+          "type": "string"
+        },
+        "updated_by": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "updated_at": {
+          "type": "string"
+        },
+        "deleted_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "is_archive": {
+          "type": "boolean"
+        },
+        "priority": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "module_id": {
+          "type": "string"
+        },
+        "order_id": {
+          "type": "number"
+        },
+        "description": {
+          "type": "string"
+        },
+        "tag": {
+          "type": "string"
+        },
+        "deleted_by": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "type_label": {
+          "type": "string"
+        },
+        "priority_label": {
+          "type": "string"
+        },
+        "tag_label": {
+          "type": "string"
+        }
+      }
+    },
+    "status": {
+      "type": "number"
+    },
+    "message": {
+      "type": "string"
+    }
+  }
+}
