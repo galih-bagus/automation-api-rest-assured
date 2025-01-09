@@ -1,0 +1,311 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Generated schema for Root",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "object",
+      "properties": {
+        "content": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "case_code": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "precondition": {
+                "type": "string"
+              },
+              "project_id": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "status_user": {
+                    "type": "boolean"
+                  },
+                  "remember_token": {},
+                  "created_by": {},
+                  "updated_by": {},
+                  "created_at": {
+                    "type": "string"
+                  },
+                  "updated_at": {
+                    "type": "string"
+                  },
+                  "user_type": {
+                    "type": "string"
+                  },
+                  "achievement": {
+                    "type": "number"
+                  },
+                  "first_name": {
+                    "type": "string"
+                  },
+                  "last_name": {
+                    "type": "string"
+                  },
+                  "full_name": {
+                    "type": "string"
+                  },
+                  "status_user_label": {
+                    "type": "string"
+                  }
+                }
+              },
+              "updated_by": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "status_user": {
+                    "type": "boolean"
+                  },
+                  "remember_token": {},
+                  "created_by": {},
+                  "updated_by": {},
+                  "created_at": {
+                    "type": "string"
+                  },
+                  "updated_at": {
+                    "type": "string"
+                  },
+                  "user_type": {
+                    "type": "string"
+                  },
+                  "achievement": {
+                    "type": "number"
+                  },
+                  "first_name": {
+                    "type": "string"
+                  },
+                  "last_name": {
+                    "type": "string"
+                  },
+                  "full_name": {
+                    "type": "string"
+                  },
+                  "status_user_label": {
+                    "type": "string"
+                  }
+                }
+              },
+              "created_at": {
+                "type": "string"
+              },
+              "updated_at": {
+                "type": "string"
+              },
+              "deleted_at": {},
+              "is_archive": {
+                "type": "boolean"
+              },
+              "priority": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              },
+              "module_id": {
+                "type": "string"
+              },
+              "order_id": {
+                "type": "number"
+              },
+              "description": {
+                "type": "string"
+              },
+              "tag": {
+                "type": "string"
+              },
+              "deleted_by": {},
+              "total_step": {
+                "type": "number"
+              },
+              "type_label": {
+                "type": "string"
+              },
+              "priority_label": {
+                "type": "string"
+              },
+              "tag_label": {
+                "type": "string"
+              },
+              "steps": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "expected_result": {
+                      "type": "string"
+                    },
+                    "position_step": {
+                      "type": "number"
+                    },
+                    "created_by": {},
+                    "updated_by": {},
+                    "created_at": {
+                      "type": "string"
+                    },
+                    "updated_at": {
+                      "type": "string"
+                    },
+                    "test_case_id": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "module": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "module_name": {
+                    "type": "string"
+                  },
+                  "created_by": {
+                    "type": "string"
+                  },
+                  "updated_by": {
+                    "type": "string"
+                  },
+                  "created_at": {
+                    "type": "string"
+                  },
+                  "updated_at": {
+                    "type": "string"
+                  },
+                  "project_id": {
+                    "type": "string"
+                  },
+                  "deleted_by": {},
+                  "deleted_at": {},
+                  "order": {
+                    "type": "number"
+                  },
+                  "parent_id": {},
+                  "is_archive": {
+                    "type": "boolean"
+                  }
+                }
+              },
+              "project": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "title": {
+                    "type": "string"
+                  },
+                  "created_by": {
+                    "type": "string"
+                  },
+                  "updated_by": {
+                    "type": "string"
+                  },
+                  "created_at": {
+                    "type": "string"
+                  },
+                  "updated_at": {
+                    "type": "string"
+                  },
+                  "deleted_at": {},
+                  "deleted_by": {}
+                }
+              },
+              "test_run_details": {
+                "type": "array",
+                "items": {}
+              }
+            }
+          }
+        },
+        "pageable": {
+          "type": "object",
+          "properties": {
+            "offset": {
+              "type": "number"
+            },
+            "paged": {
+              "type": "boolean"
+            },
+            "unpaged": {
+              "type": "boolean"
+            }
+          }
+        },
+        "total_page": {
+          "type": "number"
+        },
+        "total_elements": {
+          "type": "number"
+        },
+        "number_of_element": {
+          "type": "number"
+        },
+        "first": {
+          "type": "boolean"
+        },
+        "last": {
+          "type": "boolean"
+        },
+        "size": {
+          "type": "number"
+        },
+        "number": {
+          "type": "number"
+        },
+        "empty": {
+          "type": "boolean"
+        },
+        "sort": {
+          "type": "object",
+          "properties": {
+            "sorted": {
+              "type": "boolean"
+            },
+            "unsorted": {
+              "type": "boolean"
+            },
+            "empty": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    },
+    "status": {
+      "type": "number"
+    },
+    "message": {
+      "type": "string"
+    }
+  }
+}
